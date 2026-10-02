@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minha Localização</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+
+        <div class="logo">
+
+            <span>⌖</span>
+
+            <div>
+                <strong>Minha Localização</strong>
+                <small>Mini GPS</small>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- INTRODUÇÃO -->
+        <section class="intro">
+
+            <span class="tag">LOCALIZAÇÃO</span>
+
+            <h1>Onde estou agora?</h1>
+
+            <p>
+                Descubra sua posição atual, salve as coordenadas
+                e visualize sua localização em um mapa semelhante
+                ao funcionamento do Google Maps.
+            </p>
+
+        </section>
+
+
+        <!-- LOCALIZAÇÃO -->
+        <section class="localizacao">
+
+            <div class="titulo-secao">
+
+                <div>
+
+                    <span class="numero">01</span>
+
+                    <div>
+                        <h2>Minha posição</h2>
+
+                        <p>
+                            Coordenadas da sua localização atual
+                        </p>
+                    </div>
+
+                </div>
+
+                <span id="status" class="status">
+                    Aguardando
+                </span>
+
+            </div>
+
+
+            <!-- COORDENADAS -->
+            <div class="coordenadas">
+
+                <div class="coordenada">
+
+                    <span>LATITUDE</span>
+
+                    <strong id="latitude">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="divisor"></div>
+
+
+                <div class="coordenada">
+
+                    <span>LONGITUDE</span>
+
+                    <strong id="longitude">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTÃO -->
+            <button id="btnLocalizacao">
+
+                <span>⌖</span>
+
+                Encontrar minha localização
+
+            </button>
+
+
+            <!-- ÁREA DE TESTE -->
+            <div id="areaTeste" class="area-teste">
+
+                <div class="linha-teste"></div>
+
+                <p>
+                    Não foi possível acessar sua localização?
+                </p>
+
+                <button id="btnTeste" class="botao-teste">
+
+                    Usar localização de demonstração
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- MAPA -->
+        <section class="mapa-secao">
+
+            <div class="titulo-secao">
+
+                <div>
+
+                    <span class="numero">02</span>
+
+                    <div>
+
+                        <h2>Mini-mapa</h2>
+
+                        <p>
+                            Simulação do funcionamento do Google Maps
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!--
+                O mapa real será colocado aqui pelo JavaScript.
+                Ele utiliza o OpenStreetMap para simular
+                visualmente o funcionamento de um mapa de navegação.
+            -->
+
+            <div class="mapa" id="mapa">
+
+                <div class="mapa-inicial" id="mapaInicial">
+
+                    <div class="mapa-inicial-icone">
+                        ⌖
+                    </div>
+
+                    <strong>
+                        Aguardando localização
+                    </strong>
+
+                    <span>
+                        Clique em "Encontrar minha localização"
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="mapa-legenda">
+
+                <span>📍</span>
+
+                <p>
+                    Este mapa simula a visualização de localização
+                    de aplicativos como o Google Maps utilizando
+                    dados do OpenStreetMap.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ÚLTIMA LOCALIZAÇÃO -->
+        <section class="ultima">
+
+            <div class="icone-memoria">
+                ↻
+            </div>
+
+            <div>
+
+                <span>
+                    ÚLTIMA LOCALIZAÇÃO SALVA
+                </span>
+
+                <p id="ultimaLocalizacao">
+                    Nenhuma localização salva ainda.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DESAFIO DRAG AND DROP -->
+        <section class="desafio">
+
+            <div class="titulo-secao">
+
+                <div>
+
+                    <span class="numero">03</span>
+
+                    <div>
+
+                        <h2>
+                            Limpar localização
+                        </h2>
+
+                        <p>
+                            Teste o Drag and Drop
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="instrucoes">
+
+                <span>1</span>
+
+                <p>
+                    Arraste o papel até a lixeira para apagar
+                    a localização salva.
+                </p>
+
+            </div>
+
+
+            <div class="area-drag">
+
+                <div
+                    id="papel"
+                    class="papel"
+                    draggable="true"
+                >
+
+                    <div class="papel-icone">
+                        📄
+                    </div>
+
+                    <span>
+                        Arraste o papel
+                    </span>
+
+                </div>
+
+
+                <div class="seta">
+                    →
+                </div>
+
+
+                <div
+                    id="lixeira"
+                    class="lixeira"
+                >
+
+                    <div class="lixeira-icone">
+                        🗑️
+                    </div>
+
+                    <span>
+                        Solte aqui
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <p>
+            Projeto de Geolocalização • 
+        </p>
+
+    </footer>
+
+
+    <!-- MENSAGEM -->
+    <div
+        id="mensagem"
+        class="mensagem"
+    ></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
